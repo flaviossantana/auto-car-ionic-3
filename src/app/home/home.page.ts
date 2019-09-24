@@ -3,7 +3,6 @@ import {Component, OnInit} from '@angular/core';
 import {CarroModel} from '../model/carro.model';
 import {CarroService} from '../service/carro.service';
 import {LoadingController} from '@ionic/angular';
-import {async} from '@angular/core/testing';
 
 @Component({
     selector: 'app-home',
@@ -26,6 +25,4 @@ export class HomePage implements OnInit {
         });
 
     }
-
-
 }
