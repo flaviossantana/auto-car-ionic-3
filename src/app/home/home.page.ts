@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {CarroModel} from '../model/carro.model';
 import {CarroService} from '../service/carro.service';
 import {LoadingController} from '@ionic/angular';
+import {LoadingService} from '../core/service/loading.service';
 
 @Component({
     selector: 'app-home',
@@ -15,13 +16,14 @@ export class HomePage implements OnInit {
 
     constructor(
         private carroService: CarroService,
-        private loadCtl: LoadingController) {
+        private loading: LoadingService) {
     }
 
     ngOnInit(): void {
+        this.loading.present();
         this.carroService.todos().subscribe((carros) => {
             this.carros = carros;
-            console.log(this.carros);
+            this.loading.dimmiss();
         });
 
     }
