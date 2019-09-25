@@ -30,6 +30,7 @@ export class HomePage implements OnInit {
         this.carroService.todos().subscribe(
             (carros) => {
                 this.carros = carros;
+                this.loading.dimmiss();
             },
             (error: HttpErrorResponse) => {
                 this.alert.present(
@@ -37,8 +38,12 @@ export class HomePage implements OnInit {
                     error.statusText,
                     error.message
                 );
-            }, () => {
-                this.loading.dimmiss();
-            });
+            }
+        );
     }
+
+    selecionar(carro: CarroModel) {
+        console.log(carro);
+    }
+
 }

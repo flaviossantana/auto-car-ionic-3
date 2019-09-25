@@ -26,7 +26,9 @@ export class LoadingService {
 
     async dimmiss() {
         this.isLoading = false;
-        return await this.loadingController.dismiss();
+        return await this.loadingController.dismiss().then( a => {
+            console.log(a);
+        });
     }
 
 }

@@ -7,7 +7,11 @@
 
 <ion-content>
     <ion-list>
-        <ion-item class="item" *ngFor="let carro of carros">
+        <ion-item
+            class="item"
+            *ngFor="let carro of carros"
+            (click)="selecionar(carro)"
+        >
             <ion-label>
                 <h2>{{carro.nome}}</h2>
                 <p>{{carro.preco | currency:'BRL':true}}</p>
