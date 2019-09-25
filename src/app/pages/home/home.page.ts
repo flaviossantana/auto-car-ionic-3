@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
-import {CarroModel} from '../model/carro.model';
-import {CarroService} from '../service/carro.service';
+import {CarroModel} from '../../model/carro.model';
+import {CarroService} from '../../service/carro.service';
 import {AlertController, LoadingController} from '@ionic/angular';
-import {LoadingService} from '../core/service/loading.service';
+import {LoadingService} from '../../core/service/loading.service';
 import {HttpErrorResponse} from '@angular/common/http';
-import {AlertService} from '../core/service/alert.service';
+import {AlertService} from '../../core/service/alert.service';
 
 @Component({
     selector: 'app-home',
