@@ -10,16 +10,19 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import {HomePage} from './pages/home/home.page';
+import {HomeModule} from './pages/home/home.module';
 
 @NgModule({
     declarations: [AppComponent],
-    entryComponents: [],
+    entryComponents: [HomePage],
     imports: [
         BrowserModule,
         CommonModule,
-        IonicModule.forRoot(),
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        HomeModule,
+        IonicModule.forRoot()
     ],
     providers: [
         StatusBar,
