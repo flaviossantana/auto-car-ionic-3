@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 
 import {CarroModel} from '../../model/carro.model';
 import {CarroService} from '../../service/carro.service';
-import {AlertController, LoadingController} from '@ionic/angular';
+import {AlertController, LoadingController, NavController} from '@ionic/angular';
 import {LoadingService} from '../../core/service/loading.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {AlertService} from '../../core/service/alert.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomePage implements OnInit {
     public carros: CarroModel[];
 
     constructor(
+        private router: Router,
         private carroService: CarroService,
         private loading: LoadingService,
         private alert: AlertService
@@ -43,7 +45,7 @@ export class HomePage implements OnInit {
     }
 
     selecionar(carro: CarroModel) {
-        console.log(carro);
+        this.router.navigate(['/escolha']);
     }
 
 }
