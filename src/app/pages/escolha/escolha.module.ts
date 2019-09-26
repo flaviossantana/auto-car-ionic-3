@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
 import {EscolhaPage} from './escolha.page';
-import {CommonModule} from '@angular/common';
 import {IonicModule} from '@ionic/angular';
+import {EscolhaRoutingModule} from './escolha-routing.module';
 
 @NgModule({
     imports: [
-        IonicModule
+        IonicModule,
+        EscolhaRoutingModule
     ],
     declarations: [
         EscolhaPage
