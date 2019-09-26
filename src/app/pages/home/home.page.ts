@@ -6,7 +6,8 @@ import {AlertController, LoadingController, NavController} from '@ionic/angular'
 import {LoadingService} from '../../core/service/loading.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {AlertService} from '../../core/service/alert.service';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
+import {DadoService} from '../../core/service/dado.service';
 
 @Component({
     selector: 'app-home',
@@ -21,7 +22,8 @@ export class HomePage implements OnInit {
         private router: Router,
         private carroService: CarroService,
         private loading: LoadingService,
-        private alert: AlertService
+        private alert: AlertService,
+        private dadoService: DadoService
     ) {
     }
 
@@ -44,8 +46,15 @@ export class HomePage implements OnInit {
         );
     }
 
-    selecionar(carro: CarroModel) {
-        this.router.navigate(['/escolha']);
+    selecionar(carro: CarroModel, id: number) {
+        // this.dadoService.setDado(id, carro);
+        const extras: NavigationExtras = {
+            state: {
+                carro
+            }
+        };
+
+        this.router.navigate(['/escolha'], extras);
     }
 
 }
