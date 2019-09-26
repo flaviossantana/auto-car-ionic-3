@@ -7,6 +7,24 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+    <ion-item-group class="ion-margin-bottom">
+        <ion-item-divider color="light">Veículo</ion-item-divider>
+        <ion-item>{{carro.nome}}</ion-item>
+        <ion-item>{{carro.preco | currency:'BRL':true}} </ion-item>
+    </ion-item-group>
+
+    <ion-item-group class="ion-margin-bottom">
+        <ion-item-divider color="light">Acessório</ion-item-divider>
+        <ion-item>Roda</ion-item>
+        <ion-item>Aerofólio</ion-item>
+    </ion-item-group>
+
+    <ion-item-divider class="ion-margin-bottom" color="light">
+     <span class="ion-text-md-right">Total: R$ 1.988,00</span>
+    </ion-item-divider>
+
+    <ion-button expand="full">Avançar</ion-button>
 
 </ion-content>
