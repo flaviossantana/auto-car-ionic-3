@@ -9,22 +9,50 @@
 
 <ion-content class="ion-padding">
 
+    <ion-slides pager="true" class="ion-margin-bottom">
+        <ion-slide *ngFor="let foto of carro.fotos">
+            <img src="{{foto}}">
+        </ion-slide>
+    </ion-slides>
+
     <ion-item-group class="ion-margin-bottom">
-        <ion-item-divider color="light">Veículo</ion-item-divider>
+        <ion-item-divider color="light">
+            <ion-icon ios="ios-car" md="md-car"></ion-icon>
+            Veículo
+        </ion-item-divider>
         <ion-item>{{carro.nome}}</ion-item>
-        <ion-item>{{carro.preco | currency:'BRL':true}} </ion-item>
+        <ion-item>
+            {{
+            carro.preco | currency:'BRL':true
+            }}
+        </ion-item>
     </ion-item-group>
 
     <ion-item-group class="ion-margin-bottom">
-        <ion-item-divider color="light">Acessório</ion-item-divider>
+        <ion-item-divider color="light">
+            <ion-icon
+                    ios="ios-options"
+                    md="md-options"
+            ></ion-icon>
+            Acessório
+        </ion-item-divider>
         <ion-item>Roda</ion-item>
         <ion-item>Aerofólio</ion-item>
     </ion-item-group>
 
-    <ion-item-divider class="ion-margin-bottom" color="light">
-     <span class="ion-text-md-right">Total: R$ 1.988,00</span>
+    <ion-item-divider
+            class="ion-margin-bottom"
+            color="light">
+        R$: 1,890.44
     </ion-item-divider>
 
-    <ion-button expand="full">Avançar</ion-button>
+    <ion-fab
+            vertical="bottom"
+            horizontal="end"
+            slot="fixed">
+        <ion-fab-button>
+            <ion-icon ios="ios-images" md="md-images"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>
