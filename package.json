@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "ionic:serve:lab": "ionic serve -lab",
     "add:platform:android": "ionic cordova platform add android",
-    "add:platform:ios": "ionic cordova platform add ios"
+    "add:platform:ios": "ionic cordova platform add ios",
+    "ionic:run:android": "ionic cordova run android --verbose"
   },
   "private": true,
   "dependencies": {
